@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Account: Identifiable {
+struct Account: Identifiable, Codable {
     var id: UUID
     var name: String
     var totalAmount: Int16

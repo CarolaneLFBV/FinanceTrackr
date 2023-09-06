@@ -15,6 +15,10 @@
 		92E6C81B2AA9030800FF8579 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81A2AA9030800FF8579 /* Expense.swift */; };
 		92E6C81D2AA9031100FF8579 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81C2AA9031100FF8579 /* Account.swift */; };
 		92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */; };
+		92E6C8232AA907DD00FF8579 /* ExpenseDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */; };
+		92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8242AA909C600FF8579 /* DashboardView.swift */; };
+		92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8262AA909CB00FF8579 /* SettingsView.swift */; };
+		92E6C8292AA90AAE00FF8579 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		92E6C81A2AA9030800FF8579 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		92E6C81C2AA9031100FF8579 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ContentView.swift"; sourceTree = "<group>"; };
+		92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDescriptionView.swift; sourceTree = "<group>"; };
+		92E6C8242AA909C600FF8579 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		92E6C8262AA909CB00FF8579 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +71,6 @@
 				92E6C8162AA9027E00FF8579 /* Model */,
 				92E6C8152AA9027300FF8579 /* ViewModel */,
 				92E6C8142AA9026600FF8579 /* View */,
-				92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */,
-				92E6C8082AA9022400FF8579 /* ContentView.swift */,
 				92E6C80A2AA9022500FF8579 /* Assets.xcassets */,
 				92E6C80C2AA9022500FF8579 /* Preview Content */,
 			);
@@ -82,6 +88,11 @@
 		92E6C8142AA9026600FF8579 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				92E6C8082AA9022400FF8579 /* ContentView.swift */,
+				92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */,
+				92E6C8242AA909C600FF8579 /* DashboardView.swift */,
+				92E6C8262AA909CB00FF8579 /* SettingsView.swift */,
+				92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */,
+				92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,9 +194,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E6C81D2AA9031100FF8579 /* Account.swift in Sources */,
+				92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */,
+				92E6C8232AA907DD00FF8579 /* ExpenseDescriptionView.swift in Sources */,
+				92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */,
 				92E6C81B2AA9030800FF8579 /* Expense.swift in Sources */,
 				92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */,
 				92E6C8092AA9022400FF8579 /* ContentView.swift in Sources */,
+				92E6C8292AA90AAE00FF8579 /* AddExpenseView.swift in Sources */,
 				92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */,
 				92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */,
 			);

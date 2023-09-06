@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Expense: Identifiable {
+struct Expense: Identifiable, Codable {
     var id: UUID
     var name: String
     var amount: Int16
