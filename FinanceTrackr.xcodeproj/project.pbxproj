@@ -14,6 +14,7 @@
 		92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */; };
 		92E6C81B2AA9030800FF8579 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81A2AA9030800FF8579 /* Expense.swift */; };
 		92E6C81D2AA9031100FF8579 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81C2AA9031100FF8579 /* Account.swift */; };
+		92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		92E6C81A2AA9030800FF8579 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		92E6C81C2AA9031100FF8579 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ContentView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		92E6C8152AA9027300FF8579 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */,
 				92E6C8092AA9022400FF8579 /* ContentView.swift in Sources */,
 				92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */,
+				92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
