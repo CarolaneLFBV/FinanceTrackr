@@ -8,7 +8,7 @@
 import Foundation
 
 @MainActor class ViewModel: ObservableObject {
-    @Published private(set) var expenses: [Expense]
+    @Published var expenses: [Expense]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedData")
     
@@ -21,6 +21,19 @@ import Foundation
         }
     }
     
+    func add(expenseName: String, expenseAmount: Double, expenseTag: String) {
+        let newExpense = Expense(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag)
+        expenses.append(newExpense)
+        save()
+        print("Added")
+    }
+    
+    
+    func update() {
+        self.objectWillChange.send()
+        print("Updated")
+    }
+    
     func save() {
         do {
             let data = try JSONEncoder().encode(expenses)
@@ -28,18 +41,6 @@ import Foundation
         } catch {
             print("Unable to save data.")
         }
-    }
-    
-    func add(expenseName: String, expenseAmount: Double, expenseTag: String, account: Account) {
-        let newExpense = Expense(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag, account: account)
-        expenses.append(newExpense)
-        save()
-        print("Added")
-    }
-    
-    func update() {
-        self.objectWillChange.send()
-        print("Updated")
     }
     
     func remove(at offsets: IndexSet) {

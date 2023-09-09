@@ -13,9 +13,7 @@
 		92E6C80E2AA9022500FF8579 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E6C80D2AA9022500FF8579 /* Preview Assets.xcassets */; };
 		92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */; };
 		92E6C81B2AA9030800FF8579 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81A2AA9030800FF8579 /* Expense.swift */; };
-		92E6C81D2AA9031100FF8579 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81C2AA9031100FF8579 /* Account.swift */; };
 		92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */; };
-		92E6C8232AA907DD00FF8579 /* ExpenseDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */; };
 		92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8242AA909C600FF8579 /* DashboardView.swift */; };
 		92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8262AA909CB00FF8579 /* SettingsView.swift */; };
 		92E6C8292AA90AAE00FF8579 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */; };
@@ -29,9 +27,7 @@
 		92E6C80D2AA9022500FF8579 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager-DocumentsDirectory.swift"; sourceTree = "<group>"; };
 		92E6C81A2AA9030800FF8579 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		92E6C81C2AA9031100FF8579 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		92E6C81E2AA904D000FF8579 /* ViewModel-ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel-ContentView.swift"; sourceTree = "<group>"; };
-		92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDescriptionView.swift; sourceTree = "<group>"; };
 		92E6C8242AA909C600FF8579 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		92E6C8262AA909CB00FF8579 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
@@ -89,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				92E6C8082AA9022400FF8579 /* ContentView.swift */,
-				92E6C8222AA907DD00FF8579 /* ExpenseDescriptionView.swift */,
 				92E6C8242AA909C600FF8579 /* DashboardView.swift */,
 				92E6C8262AA909CB00FF8579 /* SettingsView.swift */,
 				92E6C8282AA90AAE00FF8579 /* AddExpenseView.swift */,
@@ -109,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				92E6C81A2AA9030800FF8579 /* Expense.swift */,
-				92E6C81C2AA9031100FF8579 /* Account.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,9 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E6C81D2AA9031100FF8579 /* Account.swift in Sources */,
 				92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */,
-				92E6C8232AA907DD00FF8579 /* ExpenseDescriptionView.swift in Sources */,
 				92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */,
 				92E6C81B2AA9030800FF8579 /* Expense.swift in Sources */,
 				92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */,

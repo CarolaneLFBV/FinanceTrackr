@@ -25,20 +25,15 @@ struct AddExpenseView: View {
                     TextField("Transaction's amount", value: $expenseAmount, format: .number)
                     TextField("Transaction's tag", text: $expenseTag)
                 }
-                
-                Section("Account information") {
-                    TextField("Account", text: $accountName)
-                    TextField("Belongs to", text: $bankName)
-                }
             }
             .navigationTitle("Add a transaction")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
                         addTransaction()
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel", role: .cancel) {
                         dismiss()
                     }
@@ -48,7 +43,7 @@ struct AddExpenseView: View {
     }
     
     func addTransaction() {
-        viewModel.add(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag, account: Account(accountName: accountName, bankName: bankName))
+        viewModel.add(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag)
         viewModel.update()
         dismiss()
     }

@@ -30,8 +30,9 @@ struct DashboardView: View {
                 }
             }
             .sheet(isPresented: $isAddingExpense) {
-                AddExpenseView(viewModel: ViewModel())
+                AddExpenseView(viewModel: viewModel)
             }
+            .navigationTitle("Dashboard")
         }
     }
 }
