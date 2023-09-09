@@ -9,8 +9,30 @@ import SwiftUI
 import Charts
 
 struct DashboardView: View {
+    @StateObject private var viewModel = ViewModel()
+    @State private var isAddingExpense = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(viewModel.expenses) { expense in
+                    Text(expense.expenseName)
+                }
+                .onDelete { index in
+                    viewModel.remove(at: index)
+                }
+            }
+            .toolbar {
+                ToolbarItem {
+                    Button("Add") {
+                        isAddingExpense = true
+                    }
+                }
+            }
+            .sheet(isPresented: $isAddingExpense) {
+                AddExpenseView(viewModel: ViewModel())
+            }
+        }
     }
 }
 

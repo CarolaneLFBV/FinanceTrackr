@@ -9,18 +9,18 @@ import Foundation
 
 struct Expense: Identifiable, Codable {
     var id: UUID
-    var name: String
-    var amount: Int16
-    var tag: String
+    var expenseName: String
+    var expenseAmount: Double
+    var expenseTag: String
     var account: Account
     
-    init(id: UUID = UUID(), name: String, amount: Int16, tag: String, account: Account) {
+    init(id: UUID = UUID(), expenseName: String, expenseAmount: Double, expenseTag: String, account: Account) {
         self.id = id
-        self.name = name
-        self.amount = amount
-        self.tag = tag
+        self.expenseName = expenseName
+        self.expenseAmount = expenseAmount
+        self.expenseTag = expenseTag
         self.account = account
     }
     
-    static let example = Expense(name: "Vinted", amount: 130, tag: "test", account: Account.example)
+    static let example = Expense(expenseName: "Vinted", expenseAmount: 130, expenseTag: "test", account: Account.example)
 }

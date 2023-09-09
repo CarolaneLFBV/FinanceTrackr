@@ -15,11 +15,6 @@ struct ContentView: View {
                     Label("Dashboard", systemImage: "chart.pie.fill")
                 }
             
-            AddExpenseView()
-                .tabItem {
-                    Label("Add", systemImage: "plus")
-                }
-            
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear")

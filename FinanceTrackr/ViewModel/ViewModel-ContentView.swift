@@ -30,8 +30,8 @@ import Foundation
         }
     }
     
-    func add(name: String, amount: Int16, tag: String, account: Account, nameAccount: String, totalAmount: Int16, bankName: String ) {
-        let newExpense = Expense(name: name, amount: amount, tag: tag, account: Account(name: nameAccount, totalAmount: totalAmount, bankName: bankName))
+    func add(expenseName: String, expenseAmount: Double, expenseTag: String, account: Account) {
+        let newExpense = Expense(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag, account: account)
         expenses.append(newExpense)
         save()
         print("Added")

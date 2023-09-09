@@ -15,13 +15,13 @@ struct ExpenseDescriptionView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Transaction Informations") {
-                    Text("$\(expense.amount)")
-                    Text(expense.tag)
-                }
+//                Section("Transaction Informations") {
+//                    Text("$\(expense.expenseAmount.formatted(.number))")
+//                    Text(expense.tag)
+//                }
                 
                 Section("Account information") {
-                    Text("Withdraw account: \(expense.account.name)")
+                    Text("Withdraw account: \(expense.account.accountName)")
                     Text("Belongs to: \(expense.account.bankName)")
                 }
                 
@@ -29,7 +29,7 @@ struct ExpenseDescriptionView: View {
                     Button("Delete transaction", role: .destructive) {}
                 }
             }
-            .navigationTitle(expense.name)
+            .navigationTitle(expense.expenseName)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem {
