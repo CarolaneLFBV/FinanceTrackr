@@ -8,22 +8,22 @@
 import Foundation
 
 @MainActor class ViewModel: ObservableObject {
-    @Published var expenses: [Expense]
+    @Published var transactions: [Transaction]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedData")
     
     init() {
         do {
             let data = try Data(contentsOf: savePath)
-            expenses = try JSONDecoder().decode([Expense].self, from: data)
+            transactions = try JSONDecoder().decode([Transaction].self, from: data)
         } catch {
-            expenses = []
+            transactions = []
         }
     }
     
-    func add(expenseName: String, expenseAmount: Double, expenseTag: String) {
-        let newExpense = Expense(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag)
-        expenses.append(newExpense)
+    func add(transactionName: String, typeTransaction: [String], transactionAmount: Double, transactionTag: String) {
+        let newTransaction = Transaction(transactionName: transactionName, typeTransaction: typeTransaction, transactionAmount: transactionAmount, transactionTag: transactionTag)
+        transactions.append(newTransaction)
         save()
         print("Added")
     }
@@ -36,7 +36,7 @@ import Foundation
     
     func save() {
         do {
-            let data = try JSONEncoder().encode(expenses)
+            let data = try JSONEncoder().encode(transactions)
             try data.write(to: savePath, options: [.atomic, .completeFileProtection])
         } catch {
             print("Unable to save data.")
@@ -44,8 +44,10 @@ import Foundation
     }
     
     func remove(at offsets: IndexSet) {
-        expenses.remove(atOffsets: offsets)
+        transactions.remove(atOffsets: offsets)
         save()
         print("Deleted")
     }
+    
+
 }

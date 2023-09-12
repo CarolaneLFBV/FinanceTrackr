@@ -7,23 +7,32 @@
 
 import SwiftUI
 
-struct AddExpenseView: View {
+struct AddTransactionView: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) var dismiss
     
-    @State private var expenseName = ""
-    @State private var expenseAmount = 0.0
-    @State private var expenseTag = ""
-    @State private var accountName = ""
-    @State private var bankName = ""
+    @State private var transactionName = ""
+    @State private var transactionAmount = 0.0
+    @State private var transactionTag = ""
+    @State private var transactionType = ["income", "expense"]
+    @State private var selectedTransactionType = "income"
     
     var body: some View {
         NavigationStack {
             Form {
+                Section("Transaction's type") {
+                    Picker("Transaction's type", selection: $selectedTransactionType) {
+                        ForEach(transactionType, id: \.self) { item in
+                            Text(item)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
                 Section("Transaction's informations") {
-                    TextField("Transaction's name", text: $expenseName)
-                    TextField("Transaction's amount", value: $expenseAmount, format: .number)
-                    TextField("Transaction's tag", text: $expenseTag)
+                    TextField("Name", text: $transactionName)
+                    TextField("Amount", value: $transactionAmount, format: .number)
+                    TextField("Tag", text: $transactionTag)
                 }
             }
             .navigationTitle("Add a transaction")
@@ -43,7 +52,7 @@ struct AddExpenseView: View {
     }
     
     func addTransaction() {
-        viewModel.add(expenseName: expenseName, expenseAmount: expenseAmount, expenseTag: expenseTag)
+        viewModel.add(transactionName: transactionName, typeTransaction: Array(arrayLiteral: selectedTransactionType), transactionAmount: transactionAmount, transactionTag: transactionTag)
         viewModel.update()
         dismiss()
     }
@@ -55,6 +64,6 @@ struct AddExpenseView: View {
 
 struct AddExpenseView_Previews: PreviewProvider {
     static var previews: some View {
-        AddExpenseView(viewModel: ViewModel())
+        AddTransactionView(viewModel: ViewModel())
     }
 }

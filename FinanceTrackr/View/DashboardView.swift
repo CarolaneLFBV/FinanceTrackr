@@ -12,11 +12,17 @@ struct DashboardView: View {
     @StateObject private var viewModel = ViewModel()
     @State private var isAddingExpense = false
     
+    @State private var totalIncome = 0.0
+    
     var body: some View {
         NavigationStack {
+            HStack {
+                Text("Total Income")
+            }
+            
             List {
-                ForEach(viewModel.expenses) { expense in
-                    Text(expense.expenseName)
+                ForEach(viewModel.transactions) { transaction in
+                    TransactionRow(transaction: transaction)
                 }
                 .onDelete { index in
                     viewModel.remove(at: index)
@@ -30,9 +36,17 @@ struct DashboardView: View {
                 }
             }
             .sheet(isPresented: $isAddingExpense) {
-                AddExpenseView(viewModel: viewModel)
+                AddTransactionView(viewModel: viewModel)
             }
             .navigationTitle("Dashboard")
+        }
+    }
+    
+    func retrieveIncome() {
+        ForEach(viewModel.transactions) { transaction in
+            if transaction.typeTransaction.contains("income") {
+                totalIncome = totalIncome + transaction.transactionAmount
+            }
         }
     }
 }
