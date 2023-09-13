@@ -17,26 +17,38 @@ struct DashboardView: View {
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section {
-                        HStack {
-                            Text("Total Income")
-                            Text("\(totalIncome.formatted(.number))")
-                        }
-                        
-                        HStack {
-                            Text("Total Spent")
-                            Text("\(totalExpense.formatted(.number))")
-                        }
+            Text("test")
+            VStack {
+                HStack {
+                    VStack {
+                        Text("Total Income")
+                            .font(.title3)
+                        Text("\(totalIncome.formatted(.number))")
+                            .font(.title3).bold().foregroundColor(.green)
+                    }
+                    .cardboardStyle()
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text("Total Spent")
+                            .font(.title3)
+                        Text("\(totalExpense.formatted(.number))")
+                            .font(.title3).bold().foregroundColor(.red)
+                    }
+                    .cardboardStyle()
                 }
-                
-                List {
-                    ForEach(viewModel.transactions) { transaction in
+                .padding([.horizontal, .vertical])
+            }
+                        
+            List {
+                ForEach(viewModel.transactions) { transaction in
+                    NavigationLink(destination: TransactionDetailView(transaction: transaction)) {
                         TransactionRow(transaction: transaction)
                     }
-                    .onDelete { index in
-                        viewModel.remove(at: index)
-                    }
+                }
+                .onDelete { index in
+                    viewModel.remove(at: index)
                 }
             }
             .toolbar {
@@ -64,8 +76,11 @@ struct DashboardView: View {
             switch transaction.typeTransaction {
             case ["income"]:
                 totalIncome += transaction.transactionAmount
-            default:
+            case ["expense"]:
                 totalExpense += transaction.transactionAmount
+            default:
+                totalIncome = 0
+                totalExpense = 0
             }
         }
         

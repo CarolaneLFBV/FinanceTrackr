@@ -17,6 +17,11 @@ struct TransactionRow: View {
                     .foregroundColor(transaction.typeTransaction.contains("income") ? .green : .red)
                 
                 Text(transaction.transactionName)
+                    .foregroundColor(transaction.typeTransaction.contains("income") ? .green : .red)
+                    .bold()
+                
+                Spacer()
+                
                 Text("\(transaction.transactionAmount.formatted(.number))")
                     .bold()
                 Spacer()

@@ -21,8 +21,8 @@ import Foundation
         }
     }
     
-    func add(transactionName: String, typeTransaction: [String], transactionAmount: Double, transactionTag: String) {
-        let newTransaction = Transaction(transactionName: transactionName, typeTransaction: typeTransaction, transactionAmount: transactionAmount, transactionTag: transactionTag)
+    func add(transactionName: String, typeTransaction: [String], paymentMethod: [String], transactionAmount: Double, transactionTag: String) {
+        let newTransaction = Transaction(transactionName: transactionName, typeTransaction: typeTransaction, paymentMethod: paymentMethod, transactionAmount: transactionAmount, transactionTag: transactionTag)
         transactions.append(newTransaction)
         save()
         print("Added")
