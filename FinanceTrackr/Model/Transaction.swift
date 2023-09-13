@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Transaction: Identifiable, Codable {
+struct Transaction: Identifiable, Codable, Equatable {
     var id: UUID
     var transactionName: String
     var typeTransaction: [String]
