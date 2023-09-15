@@ -54,6 +54,7 @@ struct AddTransactionView: View {
                     Picker("Category", selection: $selectedTransactionCategory) {
                         ForEach(Category.allCases) { category in
                             Text(category.rawValue)
+                                .tag(category)
                         }
                     }
                     .pickerStyle(.menu)

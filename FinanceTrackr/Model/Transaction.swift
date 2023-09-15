@@ -8,7 +8,7 @@
 import Foundation
 
 enum Category: String, CaseIterable, Identifiable {
-    var id: String { self.rawValue }
+    var id: Category { self }
     case food = "Food"
     case shopping = "Shopping"
     case school = "School"
