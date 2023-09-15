@@ -14,6 +14,7 @@ struct AddTransactionView: View {
     @State private var transactionName = ""
     @State private var transactionAmount = 0.0
     @State private var transactionDescription: String?
+    @State private var selectedTransactionCategory: Category = Category.food
     
     @State private var transactionTypes = ["Income", "Expense"]
     @State private var selectedTransactionType = "Income"
@@ -40,6 +41,7 @@ struct AddTransactionView: View {
                             Text(item)
                         }
                     }
+                    .pickerStyle(.menu)
                 }
                 
                 Section("Transaction's informations") {
@@ -48,8 +50,25 @@ struct AddTransactionView: View {
                     TextField("Amount", value: $transactionAmount, format: .number)
                 }
                 
+                Section("Transaction's Category") {
+                    Picker("Category", selection: $selectedTransactionCategory) {
+                        ForEach(Category.allCases) { category in
+                            Text(category.rawValue)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                }
+                
                 Section("Description (optional)") {
-                    TextEditor(text: $transactionDescription.defaultValue(""))
+                    VStack(alignment: .leading) {
+                        TextField("Description", text: $transactionDescription.defaultValue(""))
+//                            .limitInputLength(value: $transactionDescription?, length: 25)
+                            .frame(height: 50)
+                        Text("25 characters maximum")
+                            .font(.caption)
+                            .foregroundColor(.gray)
+                    }
+
                 }
             }
             .navigationTitle("Add a transaction")
@@ -70,7 +89,7 @@ struct AddTransactionView: View {
     }
     
     func addTransaction() {
-        viewModel.addTransaction(transactionName: transactionName, typeTransaction: selectedTransactionType, paymentMethod: selectedPaymentMethod, transactionAmount: transactionAmount, transactionDescription: transactionDescription)
+        viewModel.addTransaction(transactionName: transactionName, typeTransaction: selectedTransactionType, paymentMethod: selectedPaymentMethod, transactionAmount: transactionAmount, transactionDescription: transactionDescription, transactionCategory: selectedTransactionCategory.rawValue)
         viewModel.update()
         dismiss()
     }

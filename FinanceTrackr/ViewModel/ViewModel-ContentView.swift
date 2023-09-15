@@ -22,8 +22,8 @@ import Foundation
         }
     }
     
-    func addTransaction(transactionName: String, typeTransaction: String, paymentMethod: String, transactionAmount: Double, transactionDescription: String?) {
-        let newTransaction = Transaction(transactionName: transactionName, typeTransaction: typeTransaction, paymentMethod: paymentMethod, transactionAmount: transactionAmount, transactionDescription: transactionDescription)
+    func addTransaction(transactionName: String, typeTransaction: String, paymentMethod: String, transactionAmount: Double, transactionDescription: String?, transactionCategory: Category.RawValue) {
+        let newTransaction = Transaction(transactionName: transactionName, typeTransaction: typeTransaction, paymentMethod: paymentMethod, transactionAmount: transactionAmount, transactionDescription: transactionDescription, transactionCategory: transactionCategory)
         transactions.append(newTransaction)
         save()
     }

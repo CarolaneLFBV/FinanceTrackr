@@ -16,8 +16,8 @@ struct TransactionDetailView: View {
                 Form {
                     Section("Information") {
                         Text("Amount of the transaction: €\(transaction.transactionAmount.formatted(.number))")
-                        Text("Description: \(transaction.transactionDescription ?? "No description available")")
-//                        Text("\(transaction.transactionCategory.categoryName)")
+                        Text("Description: \(transaction.transactionDescription ?? "Description not available")")
+                        Text("Category: \(transaction.transactionCategory)")
                     }
                     Section("Additional information") {
                         Text("Type of transaction: \(transaction.typeTransaction)")
@@ -26,7 +26,6 @@ struct TransactionDetailView: View {
                 }
             }
             .navigationTitle("Transaction: \(transaction.transactionName)")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

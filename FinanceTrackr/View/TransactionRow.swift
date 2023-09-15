@@ -16,17 +16,32 @@ struct TransactionRow: View {
                 Image(systemName: transaction.typeTransaction.contains("Income") ? "arrow.right" : "arrow.left")
                     .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
                 
-                Text(transaction.transactionName)
-                    .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
-                    .bold()
+                VStack(alignment: .leading) {
+                    Text(transaction.transactionName)
+                        .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
+                        .bold()
+                    Text(transaction.transactionDescription ?? "Description not available")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
                 
                 Spacer()
                 
-                Text("\(transaction.transactionAmount.formatted(.number))")
-                    .bold()
+                HStack {
+                    Text("€\(transaction.transactionAmount.formatted(.number))")
+                        .bold()
+              
+                    Text(transaction.transactionCategory)
+                        .padding(3)
+                        .font(.caption)
+                        .background(.gray.opacity(0.3))
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                    
+                }
             }
-            .padding([.vertical])
+            
         }
+        .padding(.vertical, 5)
     }
 }
 

@@ -26,16 +26,16 @@ struct DashboardView: View {
                         .bold()
 
                     HStack {
-                        Text("Total Income")
-                            .font(.title3)
+                        Text("Total Earned:")
                         Text("\(totalIncome.formatted(.number))")
-                            .font(.title3).bold().foregroundColor(.green)
+                            .foregroundColor(.green)
+                            .bold()
                     }
                     HStack {
-                        Text("Total Expense")
-                            .font(.title3)
+                        Text("Total Spent:")
                         Text("\(totalExpense.formatted(.number))")
-                            .font(.title3).bold().foregroundColor(.red)
+                            .foregroundColor(.red)
+                            .bold()
                     }
                 }
                 
