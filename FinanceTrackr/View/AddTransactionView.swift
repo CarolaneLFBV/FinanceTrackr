@@ -45,8 +45,11 @@ struct AddTransactionView: View {
                 Section("Transaction's informations") {
                     TextField("Name", text: $transactionName)
                         .limitInputLength(value: $transactionName, length: 10)
-                    TextField("Description (optional)", text: $transactionDescription.defaultValue(""))
                     TextField("Amount", value: $transactionAmount, format: .number)
+                }
+                
+                Section("Description (optional)") {
+                    TextEditor(text: $transactionDescription.defaultValue(""))
                 }
             }
             .navigationTitle("Add a transaction")
