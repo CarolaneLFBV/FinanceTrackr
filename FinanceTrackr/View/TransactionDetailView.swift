@@ -11,8 +11,23 @@ struct TransactionDetailView: View {
     let transaction: Transaction
     
     var body: some View {
-        Text(transaction.transactionName)
-        
+        NavigationStack {
+            VStack {
+                Form {
+                    Section("Information") {
+                        Text("Amount of the transaction: €\(transaction.transactionAmount.formatted(.number))")
+                        Text("Description: \(transaction.transactionDescription ?? "No description available")")
+//                        Text("\(transaction.transactionCategory.categoryName)")
+                    }
+                    Section("Additional information") {
+                        Text("Type of transaction: \(transaction.typeTransaction)")
+                        Text("Payment method: \(transaction.paymentMethod)")
+                    }
+                }
+            }
+            .navigationTitle("Transaction: \(transaction.transactionName)")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

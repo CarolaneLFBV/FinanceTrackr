@@ -15,40 +15,41 @@ struct DashboardView: View {
     @State private var totalIncome = 0.0
     @State private var totalExpense = 0.0
     
+    @State private var monthlyBudget = 0.0
+    
     var body: some View {
         NavigationStack {
-            Text("test")
-            VStack {
-                HStack {
-                    VStack {
+            Form {
+                Section {
+                    Text("Monthly Budget: \(monthlyBudget.formatted(.number))")
+                        .font(.title2)
+                        .bold()
+
+                    HStack {
                         Text("Total Income")
                             .font(.title3)
                         Text("\(totalIncome.formatted(.number))")
                             .font(.title3).bold().foregroundColor(.green)
                     }
-                    .cardboardStyle()
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Text("Total Spent")
+                    HStack {
+                        Text("Total Expense")
                             .font(.title3)
                         Text("\(totalExpense.formatted(.number))")
                             .font(.title3).bold().foregroundColor(.red)
                     }
-                    .cardboardStyle()
                 }
-                .padding([.horizontal, .vertical])
-            }
-                        
-            List {
-                ForEach(viewModel.transactions) { transaction in
-                    NavigationLink(destination: TransactionDetailView(transaction: transaction)) {
-                        TransactionRow(transaction: transaction)
+                
+                Section {
+                    List {
+                        ForEach(viewModel.transactions) { transaction in
+                            NavigationLink(destination: TransactionDetailView(transaction: transaction)) {
+                                TransactionRow(transaction: transaction)
+                            }
+                        }
+                        .onDelete { index in
+                            viewModel.removeTransaction(at: index)
+                        }
                     }
-                }
-                .onDelete { index in
-                    viewModel.remove(at: index)
                 }
             }
             .toolbar {
@@ -74,23 +75,15 @@ struct DashboardView: View {
     func retrieveTotalAmount() {
         for transaction in viewModel.transactions {
             switch transaction.typeTransaction {
-            case ["income"]:
+            case "Income":
                 totalIncome += transaction.transactionAmount
-            case ["expense"]:
+            case "Expense":
                 totalExpense += transaction.transactionAmount
             default:
                 totalIncome = 0
                 totalExpense = 0
             }
         }
-        
-//        if transaction.typeTransaction.contains("income") {
-//            totalIncome += transaction.transactionAmount
-//        } else if transaction.typeTransaction.contains("expense") {
-//            totalExpense += transaction.transactionAmount
-//        } else {
-//
-//        }
     }
 }
 

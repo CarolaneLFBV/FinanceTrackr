@@ -13,20 +13,17 @@ struct TransactionRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image(systemName: transaction.typeTransaction.contains("income") ? "arrow.right" : "arrow.left")
-                    .foregroundColor(transaction.typeTransaction.contains("income") ? .green : .red)
+                Image(systemName: transaction.typeTransaction.contains("Income") ? "arrow.right" : "arrow.left")
+                    .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
                 
                 Text(transaction.transactionName)
-                    .foregroundColor(transaction.typeTransaction.contains("income") ? .green : .red)
+                    .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
                     .bold()
                 
                 Spacer()
                 
                 Text("\(transaction.transactionAmount.formatted(.number))")
                     .bold()
-                Spacer()
-                Text(transaction.transactionTag)
-                    .tagStyle()
             }
             .padding([.vertical])
         }

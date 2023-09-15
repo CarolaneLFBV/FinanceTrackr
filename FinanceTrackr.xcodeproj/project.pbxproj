@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */; };
 		92B2F6492AACCC7300CBFB38 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2F6482AACCC7300CBFB38 /* TransactionRow.swift */; };
 		92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */; };
 		92E6C8092AA9022400FF8579 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8082AA9022400FF8579 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-BindingOptionals.swift"; sourceTree = "<group>"; };
 		92B2F6482AACCC7300CBFB38 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		92E6C8032AA9022400FF8579 /* FinanceTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackrApp.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				92E6C8182AA902D600FF8579 /* FileManager-DocumentsDirectory.swift */,
 				92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */,
 				92E7E67B2AB219F8003E9097 /* Extension-TextFieldModifier.swift */,
+				922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F3D4282AB0B643007B7D49 /* TagStyleComponent.swift in Sources */,
+				922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */,
 				92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */,
 				92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */,
 				92E6C81B2AA9030800FF8579 /* Transaction.swift in Sources */,

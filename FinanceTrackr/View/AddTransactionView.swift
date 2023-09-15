@@ -13,13 +13,14 @@ struct AddTransactionView: View {
     
     @State private var transactionName = ""
     @State private var transactionAmount = 0.0
-    @State private var transactionTag = ""
+    @State private var transactionDescription: String?
     
     @State private var transactionTypes = ["Income", "Expense"]
     @State private var selectedTransactionType = "Income"
     
     @State private var paymentMethods = ["Credit Card", "Debit Card", "Cash", "Online", "Third-party"]
     @State private var selectedPaymentMethod = "Credit Card"
+
     
     var body: some View {
         NavigationStack {
@@ -44,9 +45,8 @@ struct AddTransactionView: View {
                 Section("Transaction's informations") {
                     TextField("Name", text: $transactionName)
                         .limitInputLength(value: $transactionName, length: 10)
+                    TextField("Description (optional)", text: $transactionDescription.defaultValue(""))
                     TextField("Amount", value: $transactionAmount, format: .number)
-                    TextField("Tag", text: $transactionTag)
-                        .limitInputLength(value: $transactionName, length: 10)
                 }
             }
             .navigationTitle("Add a transaction")
@@ -67,13 +67,9 @@ struct AddTransactionView: View {
     }
     
     func addTransaction() {
-        viewModel.add(transactionName: transactionName, typeTransaction: Array(arrayLiteral: selectedTransactionType), paymentMethod: Array(arrayLiteral: selectedPaymentMethod), transactionAmount: transactionAmount, transactionTag: transactionTag)
+        viewModel.addTransaction(transactionName: transactionName, typeTransaction: selectedTransactionType, paymentMethod: selectedPaymentMethod, transactionAmount: transactionAmount, transactionDescription: transactionDescription)
         viewModel.update()
         dismiss()
-    }
-    
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
     }
 }
 
