@@ -9,7 +9,6 @@ import Foundation
 
 @MainActor class ViewModel: ObservableObject {
     @Published var transactions: [Transaction]
-//    @Published var categories: [Transaction.Category]
     
     let savePath = FileManager.documentsDirectory.appendingPathComponent("SavedData")
     
@@ -43,6 +42,11 @@ import Foundation
     
     func removeTransaction(at offsets: IndexSet) {
         transactions.remove(atOffsets: offsets)
+        save()
+    }
+    
+    func reset() {
+        transactions = []
         save()
     }
 }

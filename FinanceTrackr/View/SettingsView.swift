@@ -9,7 +9,15 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
+        NavigationStack {
+            Form {
+                Section("About the app") {
+                    Text("Version: v0.5.5")
+                    Text("Developer: CarolaneLFBV")
+                }
+            }
+            .navigationTitle("Settings")
+        }
     }
 }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */; };
+		922CA4452AB5B9D60013C371 /* ButtonStyleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */; };
+		922CA4472AB5C1AA0013C371 /* AddMonthlyBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4462AB5C1AA0013C371 /* AddMonthlyBudgetView.swift */; };
 		92B2F6492AACCC7300CBFB38 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B2F6482AACCC7300CBFB38 /* TransactionRow.swift */; };
 		92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */; };
 		92E6C8092AA9022400FF8579 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E6C8082AA9022400FF8579 /* ContentView.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-BindingOptionals.swift"; sourceTree = "<group>"; };
+		922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleComponent.swift; sourceTree = "<group>"; };
+		922CA4462AB5C1AA0013C371 /* AddMonthlyBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyBudgetView.swift; sourceTree = "<group>"; };
 		92B2F6482AACCC7300CBFB38 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		92E6C8032AA9022400FF8579 /* FinanceTrackr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceTrackr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E6C8062AA9022400FF8579 /* FinanceTrackrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackrApp.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 				92E6C8282AA90AAE00FF8579 /* AddTransactionView.swift */,
 				92E7E67D2AB21FCD003E9097 /* TransactionDetailView.swift */,
 				92B2F6482AACCC7300CBFB38 /* TransactionRow.swift */,
+				922CA4462AB5C1AA0013C371 /* AddMonthlyBudgetView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				92F3D4272AB0B643007B7D49 /* TagStyleComponent.swift */,
 				92E7E6792AB20E41003E9097 /* CardboardStyleComponent.swift */,
+				922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,8 +231,10 @@
 				92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */,
 				92B2F6492AACCC7300CBFB38 /* TransactionRow.swift in Sources */,
 				92E7E67E2AB21FCD003E9097 /* TransactionDetailView.swift in Sources */,
+				922CA4452AB5B9D60013C371 /* ButtonStyleComponent.swift in Sources */,
 				92E7E67C2AB219F8003E9097 /* Extension-TextFieldModifier.swift in Sources */,
 				92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */,
+				922CA4472AB5C1AA0013C371 /* AddMonthlyBudgetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
