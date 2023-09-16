@@ -109,9 +109,7 @@ struct DashboardView: View {
             .navigationTitle("Dashboard")
         }
         .onChange(of: viewModel.transactions) { value in
-            totalIncome = 0
-            totalExpense = 0
-            retrieveTotalAmount()
+            updateDashboard()
         }
         .onAppear(perform: retrieveTotalAmount)
     }
@@ -128,6 +126,12 @@ struct DashboardView: View {
                 totalExpense = 0
             }
         }
+    }
+    
+    func updateDashboard() {
+        totalIncome = 0
+        totalExpense = 0
+        retrieveTotalAmount()
     }
 }
 

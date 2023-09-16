@@ -12,7 +12,7 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section("About the app") {
-                    Text("Version: v0.5.5")
+                    Text("Version: v0.6.8")
                     Text("Developer: CarolaneLFBV")
                 }
             }
