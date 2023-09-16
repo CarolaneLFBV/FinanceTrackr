@@ -17,11 +17,16 @@ struct DashboardView: View {
     
     @State private var monthlyBudget = 0.0
     
+    var monthlyBudgetCalculated: Double {
+        let totalMonthlyBudget = (monthlyBudget + totalIncome) - totalExpense
+        return totalMonthlyBudget
+    }
+    
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    Text("Monthly Budget: \(monthlyBudget.formatted(.number))")
+                    Text("Monthly Budget: \(monthlyBudgetCalculated.formatted(.number))")
                         .font(.title2)
                         .bold()
 
