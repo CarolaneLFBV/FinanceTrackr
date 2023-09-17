@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921A7C392AB615D000971E34 /* FinanceTrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A7C382AB615D000971E34 /* FinanceTrackrTests.swift */; };
 		922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */; };
 		922CA4452AB5B9D60013C371 /* ButtonStyleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */; };
 		922CA4472AB5C1AA0013C371 /* AddMonthlyBudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4462AB5C1AA0013C371 /* AddMonthlyBudgetView.swift */; };
@@ -27,7 +28,19 @@
 		92F3D4282AB0B643007B7D49 /* TagStyleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D4272AB0B643007B7D49 /* TagStyleComponent.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		921A7C3A2AB615D000971E34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92E6C7FB2AA9022400FF8579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92E6C8022AA9022400FF8579;
+			remoteInfo = FinanceTrackr;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		921A7C362AB615D000971E34 /* FinanceTrackrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceTrackrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		921A7C382AB615D000971E34 /* FinanceTrackrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackrTests.swift; sourceTree = "<group>"; };
 		922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-BindingOptionals.swift"; sourceTree = "<group>"; };
 		922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleComponent.swift; sourceTree = "<group>"; };
 		922CA4462AB5C1AA0013C371 /* AddMonthlyBudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMonthlyBudgetView.swift; sourceTree = "<group>"; };
@@ -50,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		921A7C332AB615D000971E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E6C8002AA9022400FF8579 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,10 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		921A7C372AB615D000971E34 /* FinanceTrackrTests */ = {
+			isa = PBXGroup;
+			children = (
+				921A7C382AB615D000971E34 /* FinanceTrackrTests.swift */,
+			);
+			path = FinanceTrackrTests;
+			sourceTree = "<group>";
+		};
 		92E6C7FA2AA9022400FF8579 = {
 			isa = PBXGroup;
 			children = (
 				92E6C8052AA9022400FF8579 /* FinanceTrackr */,
+				921A7C372AB615D000971E34 /* FinanceTrackrTests */,
 				92E6C8042AA9022400FF8579 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				92E6C8032AA9022400FF8579 /* FinanceTrackr.app */,
+				921A7C362AB615D000971E34 /* FinanceTrackrTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,6 +182,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		921A7C352AB615D000971E34 /* FinanceTrackrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 921A7C3E2AB615D000971E34 /* Build configuration list for PBXNativeTarget "FinanceTrackrTests" */;
+			buildPhases = (
+				921A7C322AB615D000971E34 /* Sources */,
+				921A7C332AB615D000971E34 /* Frameworks */,
+				921A7C342AB615D000971E34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				921A7C3B2AB615D000971E34 /* PBXTargetDependency */,
+			);
+			name = FinanceTrackrTests;
+			productName = FinanceTrackrTests;
+			productReference = 921A7C362AB615D000971E34 /* FinanceTrackrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		92E6C8022AA9022400FF8579 /* FinanceTrackr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E6C8112AA9022500FF8579 /* Build configuration list for PBXNativeTarget "FinanceTrackr" */;
@@ -179,6 +227,10 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					921A7C352AB615D000971E34 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 92E6C8022AA9022400FF8579;
+					};
 					92E6C8022AA9022400FF8579 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -198,11 +250,19 @@
 			projectRoot = "";
 			targets = (
 				92E6C8022AA9022400FF8579 /* FinanceTrackr */,
+				921A7C352AB615D000971E34 /* FinanceTrackrTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		921A7C342AB615D000971E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E6C8012AA9022400FF8579 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -215,6 +275,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		921A7C322AB615D000971E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				921A7C392AB615D000971E34 /* FinanceTrackrTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		92E6C7FF2AA9022400FF8579 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,7 +308,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		921A7C3B2AB615D000971E34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92E6C8022AA9022400FF8579 /* FinanceTrackr */;
+			targetProxy = 921A7C3A2AB615D000971E34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		921A7C3C2AB615D000971E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VP2J2SZVR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = carolanelfbv.FinanceTrackrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinanceTrackr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinanceTrackr";
+			};
+			name = Debug;
+		};
+		921A7C3D2AB615D000971E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2VP2J2SZVR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = carolanelfbv.FinanceTrackrTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinanceTrackr.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinanceTrackr";
+			};
+			name = Release;
+		};
 		92E6C80F2AA9022500FF8579 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -416,6 +528,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		921A7C3E2AB615D000971E34 /* Build configuration list for PBXNativeTarget "FinanceTrackrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				921A7C3C2AB615D000971E34 /* Debug */,
+				921A7C3D2AB615D000971E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		92E6C7FE2AA9022400FF8579 /* Build configuration list for PBXProject "FinanceTrackr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

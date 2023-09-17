@@ -22,7 +22,6 @@ struct DashboardView: View {
     
     @AppStorage("Budget") private var monthlyBudget = 0.0
     
-    
     var monthlyBudgetCalculated: Double {
         let totalMonthlyBudget = (monthlyBudget + totalIncome) - totalExpense
         return totalMonthlyBudget
@@ -34,7 +33,7 @@ struct DashboardView: View {
                 Form {
                     Section {
                         if isMonthlyBudgetDisplayed {
-                            Text("Monthly Budget: \(monthlyBudgetCalculated.formatted(.number))")
+                            Text("Month's Budget: \(monthlyBudgetCalculated.formatted(.number))")
                                 .font(.title2)
                                 .bold()
                         }
@@ -84,11 +83,7 @@ struct DashboardView: View {
                         Spacer()
                         
                         Menu {
-                            Button("New month") {
-                                viewModel.reset()
-                                monthlyBudget = 0.0
-                                isMonthlyBudgetDisplayed = false
-                            }
+                            Button("New month", action: resetMonth)
                             Button("Add a budget") {
                                 isMonthlyBudget = true
                                 isMonthlyBudgetDisplayed = true
@@ -132,6 +127,12 @@ struct DashboardView: View {
         totalIncome = 0
         totalExpense = 0
         retrieveTotalAmount()
+    }
+    
+    func resetMonth() {
+        viewModel.reset()
+        monthlyBudget = 0.0
+        isMonthlyBudgetDisplayed = false
     }
 }
 
