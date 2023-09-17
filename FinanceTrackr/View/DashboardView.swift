@@ -74,8 +74,12 @@ struct DashboardView: View {
                         }
                     }
                     
+                    Section {
+                        ChartView()
+                    }
+                    .padding()
+                    .frame(minHeight: 400)
                 }
-                
                 VStack {
                     Spacer()
                     
