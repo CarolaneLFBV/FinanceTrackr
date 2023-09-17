@@ -56,9 +56,12 @@ struct DashboardView: View {
                     
                     if isMonthlyBudget {
                         Section("Add a budget") {
-                            TextField("Amount", value: $monthlyBudget, format: .number)
-                            Button("Ok") {
-                                isMonthlyBudget = false
+                            HStack {
+                                TextField("Amount", value: $monthlyBudget, format: .number)
+                                Button("Save") {
+                                    isMonthlyBudget = false
+                                }
+                                .buttonStyle(.bordered)
                             }
                         }
                     }
