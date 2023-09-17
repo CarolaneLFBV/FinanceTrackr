@@ -17,7 +17,7 @@ struct AddTransactionView: View {
     @State private var selectedTransactionCategory: Category = Category.food
     
     @State private var transactionTypes = ["Income", "Expense"]
-    @State private var selectedTransactionType = "Income"
+    @State private var selectedTransactionType = "Expense"
     
     @State private var paymentMethods = ["Credit Card", "Debit Card", "Cash", "Online", "Third-party"]
     @State private var selectedPaymentMethod = "Credit Card"
@@ -35,6 +35,14 @@ struct AddTransactionView: View {
                     .pickerStyle(.segmented)
                 }
                 
+                
+                Section("Transaction's informations") {
+                    TextField("Name", text: $transactionName)
+                        .limitInputLength(value: $transactionName, length: 10)
+                    TextField("Amount", value: $transactionAmount, format: .number)
+                }
+                
+                
                 Section("Payment Method") {
                     Picker("Payment Method", selection: $selectedPaymentMethod) {
                         ForEach(paymentMethods, id: \.self) { item in
@@ -43,13 +51,7 @@ struct AddTransactionView: View {
                     }
                     .pickerStyle(.menu)
                 }
-                
-                Section("Transaction's informations") {
-                    TextField("Name", text: $transactionName)
-                        .limitInputLength(value: $transactionName, length: 10)
-                    TextField("Amount", value: $transactionAmount, format: .number)
-                }
-                
+
                 Section("Transaction's Category") {
                     Picker("Category", selection: $selectedTransactionCategory) {
                         ForEach(Category.allCases) { category in

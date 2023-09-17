@@ -24,6 +24,7 @@ struct ChartView: View {
                     }
                 }
             }
+            .padding()
             .onChange(of: viewModel.transactions.count) { value in
                 print("test")
             }

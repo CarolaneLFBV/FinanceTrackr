@@ -12,7 +12,7 @@ struct ContentView: View {
         TabView {
             DashboardView()
                 .tabItem {
-                    Label("Dashboard", systemImage: "chart.pie.fill")
+                    Label("Dashboard", systemImage: "list.bullet")
                 }
             
             SettingsView()

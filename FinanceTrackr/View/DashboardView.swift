@@ -8,6 +8,8 @@
 import SwiftUI
 import Charts
 
+
+
 struct DashboardView: View {
     @StateObject private var viewModel = ViewModel()
     @Environment(\.dismiss) var dismiss
@@ -61,6 +63,11 @@ struct DashboardView: View {
                         }
                     }
                     
+                    
+                    Section {
+                        ChartView()
+                    }
+                    
                     Section {
                         List {
                             ForEach(viewModel.transactions) { transaction in
@@ -73,12 +80,6 @@ struct DashboardView: View {
                             }
                         }
                     }
-                    
-                    Section {
-                        ChartView()
-                    }
-                    .padding()
-                    .frame(minHeight: 400)
                 }
                 VStack {
                     Spacer()
@@ -110,7 +111,10 @@ struct DashboardView: View {
         .onChange(of: viewModel.transactions) { value in
             updateDashboard()
         }
-        .onAppear(perform: retrieveTotalAmount)
+        .onAppear {
+            retrieveTotalAmount()
+            updateDashboard()
+        }
     }
     
     func retrieveTotalAmount() {
