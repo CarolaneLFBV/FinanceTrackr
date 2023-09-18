@@ -15,6 +15,10 @@ struct SettingsView: View {
                     Text("Version: v0.6.8")
                     Text("Developer: CarolaneLFBV")
                 }
+                
+                Section("Notifications") {
+                    NavigationLink("Notifications", destination: NotificationView())
+                }
             }
             .navigationTitle("Settings")
         }
