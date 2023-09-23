@@ -14,15 +14,15 @@ struct TransactionRow: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: transaction.typeTransaction.contains("Income") ? "arrow.right" : "arrow.left")
-                    .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
+                    .foregroundStyle(transaction.typeTransaction.contains("Income") ? .green : .red)
                 
                 VStack(alignment: .leading) {
                     Text(transaction.transactionName)
-                        .foregroundColor(transaction.typeTransaction.contains("Income") ? .green : .red)
+                        .foregroundStyle(transaction.typeTransaction.contains("Income") ? .green : .red)
                         .bold()
                     Text(transaction.transactionDescription ?? "Description not available")
                         .font(.caption)
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
                 
                 Spacer()

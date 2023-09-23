@@ -17,7 +17,8 @@ struct SettingsView: View {
                 }
                 
                 Section("Notifications") {
-                    NavigationLink("Notifications", destination: NotificationView())
+                    NavigationLink("Notifications", destination: NotificationCenterView())
+                    Text("Notifications")
                 }
             }
             .navigationTitle("Settings")

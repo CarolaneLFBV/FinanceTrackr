@@ -4,6 +4,7 @@
 //
 //  Created by Carolane Lefebvre on 18/09/2023.
 //
+
 import Foundation
 import UserNotifications
 
@@ -11,7 +12,17 @@ final class NotificationManager: ObservableObject {
     @Published private(set) var notifications: [UNNotificationRequest] = []
     @Published private(set) var authorizationStatus: UNAuthorizationStatus?
     
-    //MARK: - reloadAuthorizationStatus
+    var notificationDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .short
+        return dateFormatter
+    }()
+    
+    func timeDisplayText(from notification: UNNotificationRequest) -> String {
+        guard let nextTriggerDate = (notification.trigger as? UNCalendarNotificationTrigger)?.nextTriggerDate() else { return "" }
+        return notificationDateFormatter.string(from: nextTriggerDate)
+    }
+    
     func reloadAuthorizationStatus() {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             DispatchQueue.main.async {
@@ -19,15 +30,16 @@ final class NotificationManager: ObservableObject {
             }
         }
     }
-    //MARK: - requestAuthorization
+    
     func requestAuthorization() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, _ in
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (success, error) in
             DispatchQueue.main.async {
-                self.authorizationStatus = isGranted ? .authorized : .denied
+                self.authorizationStatus = success ? .authorized : .denied
             }
         }
     }
-    //MARK: - ReloadLocalNotification
+    
     func reloadLocalNotifications() {
         UNUserNotificationCenter.current().getPendingNotificationRequests { notifications in
             DispatchQueue.main.async {
@@ -35,7 +47,7 @@ final class NotificationManager: ObservableObject {
             }
         }
     }
-    //MARK: - ReloadLocalNotification
+    
     func createLocalNotification(title: String, body: String, hour: Int, minute: Int, completion: @escaping (Error?) -> Void) {
         var dateComponents = DateComponents()
         dateComponents.hour = hour
@@ -53,7 +65,6 @@ final class NotificationManager: ObservableObject {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: completion)
     }
     
-    //MARK: - DeleteLocalNotification
     func deleteLocalNotification(identifiers: [String]) {
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
     }

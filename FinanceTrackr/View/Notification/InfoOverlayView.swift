@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct InfoOverlayView: View {
+    let infoMessage: String
+    let buttonTitle: String
+    let systemImageName: String
+    let action: () -> Void
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(infoMessage)
+                .fontWeight(.semibold)
+                .frame(maxWidth: .infinity)
+                .multilineTextAlignment(.center)
+            
+            Button {
+                action()
+            } label: {
+                Label(buttonTitle, systemImage: systemImageName)
+            }
+            .padding()
+            .backgroundStyle(Color(.systemGray5))
+            .cornerRadius(5)
+        }
     }
 }
 
 #Preview {
-    InfoOverlayView()
+    InfoOverlayView(infoMessage: "", buttonTitle: "", systemImageName: "", action: {})
 }

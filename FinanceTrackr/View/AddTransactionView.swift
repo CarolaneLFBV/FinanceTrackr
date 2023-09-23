@@ -69,7 +69,7 @@ struct AddTransactionView: View {
                             .frame(height: 50)
                         Text("25 characters maximum")
                             .font(.caption)
-                            .foregroundColor(.gray)
+                            .foregroundStyle(.gray)
                     }
 
                 }

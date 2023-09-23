@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		920F7F542ABF3C3E00FF1208 /* NotificationCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F7F532ABF3C3E00FF1208 /* NotificationCenterView.swift */; };
+		920F7F562ABF3C6600FF1208 /* InfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F7F552ABF3C6600FF1208 /* InfoOverlayView.swift */; };
+		920F7F582ABF3C9000FF1208 /* CreateNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920F7F572ABF3C9000FF1208 /* CreateNotificationView.swift */; };
 		921A7C392AB615D000971E34 /* FinanceTrackrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921A7C382AB615D000971E34 /* FinanceTrackrTests.swift */; };
 		922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */; };
 		922CA4452AB5B9D60013C371 /* ButtonStyleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922CA4442AB5B9D60013C371 /* ButtonStyleComponent.swift */; };
@@ -27,9 +30,6 @@
 		92E7E67C2AB219F8003E9097 /* Extension-TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7E67B2AB219F8003E9097 /* Extension-TextFieldModifier.swift */; };
 		92E7E67E2AB21FCD003E9097 /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E7E67D2AB21FCD003E9097 /* TransactionDetailView.swift */; };
 		92F3D4282AB0B643007B7D49 /* TagStyleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3D4272AB0B643007B7D49 /* TagStyleComponent.swift */; };
-		92FB4F132AB83D19003F545C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB4F122AB83D19003F545C /* NotificationView.swift */; };
-		92FB4F152AB83D83003F545C /* InfoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB4F142AB83D83003F545C /* InfoOverlayView.swift */; };
-		92FB4F182AB83DB4003F545C /* CreateNotificatonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB4F172AB83DB4003F545C /* CreateNotificatonView.swift */; };
 		92FB4F1A2AB83DDC003F545C /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FB4F192AB83DDC003F545C /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		920F7F532ABF3C3E00FF1208 /* NotificationCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterView.swift; sourceTree = "<group>"; };
+		920F7F552ABF3C6600FF1208 /* InfoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlayView.swift; sourceTree = "<group>"; };
+		920F7F572ABF3C9000FF1208 /* CreateNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotificationView.swift; sourceTree = "<group>"; };
 		921A7C362AB615D000971E34 /* FinanceTrackrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceTrackrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		921A7C382AB615D000971E34 /* FinanceTrackrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceTrackrTests.swift; sourceTree = "<group>"; };
 		922CA4402AB4E3480013C371 /* Extension-BindingOptionals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-BindingOptionals.swift"; sourceTree = "<group>"; };
@@ -66,9 +69,6 @@
 		92E7E67B2AB219F8003E9097 /* Extension-TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-TextFieldModifier.swift"; sourceTree = "<group>"; };
 		92E7E67D2AB21FCD003E9097 /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		92F3D4272AB0B643007B7D49 /* TagStyleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagStyleComponent.swift; sourceTree = "<group>"; };
-		92FB4F122AB83D19003F545C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
-		92FB4F142AB83D83003F545C /* InfoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoOverlayView.swift; sourceTree = "<group>"; };
-		92FB4F172AB83DB4003F545C /* CreateNotificatonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNotificatonView.swift; sourceTree = "<group>"; };
 		92FB4F192AB83DDC003F545C /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,9 +195,9 @@
 		92FB4F162AB83D96003F545C /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				92FB4F122AB83D19003F545C /* NotificationView.swift */,
-				92FB4F142AB83D83003F545C /* InfoOverlayView.swift */,
-				92FB4F172AB83DB4003F545C /* CreateNotificatonView.swift */,
+				920F7F532ABF3C3E00FF1208 /* NotificationCenterView.swift */,
+				920F7F552ABF3C6600FF1208 /* InfoOverlayView.swift */,
+				920F7F572ABF3C9000FF1208 /* CreateNotificationView.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -311,26 +311,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				92F3D4282AB0B643007B7D49 /* TagStyleComponent.swift in Sources */,
+				920F7F562ABF3C6600FF1208 /* InfoOverlayView.swift in Sources */,
 				922CA4412AB4E3480013C371 /* Extension-BindingOptionals.swift in Sources */,
 				92E6C8252AA909C600FF8579 /* DashboardView.swift in Sources */,
 				92E6C8272AA909CB00FF8579 /* SettingsView.swift in Sources */,
 				92E6C81B2AA9030800FF8579 /* Transaction.swift in Sources */,
 				92E6C8192AA902D600FF8579 /* FileManager-DocumentsDirectory.swift in Sources */,
 				92E6C8092AA9022400FF8579 /* ContentView.swift in Sources */,
+				920F7F542ABF3C3E00FF1208 /* NotificationCenterView.swift in Sources */,
 				92E6C8292AA90AAE00FF8579 /* AddTransactionView.swift in Sources */,
 				92E7E67A2AB20E41003E9097 /* CardboardStyleComponent.swift in Sources */,
 				92E6C8072AA9022400FF8579 /* FinanceTrackrApp.swift in Sources */,
 				929355192AB7418300155666 /* ChartView.swift in Sources */,
+				920F7F582ABF3C9000FF1208 /* CreateNotificationView.swift in Sources */,
 				92B2F6492AACCC7300CBFB38 /* TransactionRow.swift in Sources */,
 				92E7E67E2AB21FCD003E9097 /* TransactionDetailView.swift in Sources */,
 				922CA4452AB5B9D60013C371 /* ButtonStyleComponent.swift in Sources */,
 				92E7E67C2AB219F8003E9097 /* Extension-TextFieldModifier.swift in Sources */,
 				92E6C81F2AA904D000FF8579 /* ViewModel-ContentView.swift in Sources */,
-				92FB4F152AB83D83003F545C /* InfoOverlayView.swift in Sources */,
 				922CA4472AB5C1AA0013C371 /* AddMonthlyBudgetView.swift in Sources */,
 				92FB4F1A2AB83DDC003F545C /* NotificationManager.swift in Sources */,
-				92FB4F132AB83D19003F545C /* NotificationView.swift in Sources */,
-				92FB4F182AB83DB4003F545C /* CreateNotificatonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

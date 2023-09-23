@@ -8,8 +8,6 @@
 import SwiftUI
 import Charts
 
-
-
 struct DashboardView: View {
     @StateObject private var viewModel = ViewModel()
     @Environment(\.dismiss) var dismiss
@@ -42,13 +40,13 @@ struct DashboardView: View {
                         HStack {
                             Text("Total Earned:")
                             Text("\(totalIncome.formatted(.number))")
-                                .foregroundColor(.green)
+                                .foregroundStyle(.green)
                                 .bold()
                         }
                         HStack {
                             Text("Total Spent:")
                             Text("\(totalExpense.formatted(.number))")
-                                .foregroundColor(.red)
+                                .foregroundStyle(.red)
                                 .bold()
                         }
                         
@@ -66,11 +64,13 @@ struct DashboardView: View {
                         }
                     }
                     
-                    
-                    Section {
-                        ChartView()
+                    if viewModel.transactions.count > 0 {
+                        Section {
+                            ChartView()
+                        }
+                        
                     }
-                    
+
                     Section {
                         List {
                             ForEach(viewModel.transactions) { transaction in
@@ -147,8 +147,6 @@ struct DashboardView: View {
     }
 }
 
-struct DashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DashboardView()
-    }
+#Preview {
+    DashboardView()
 }

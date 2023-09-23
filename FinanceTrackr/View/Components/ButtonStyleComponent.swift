@@ -12,7 +12,7 @@ struct ButtonStyleComponent: ViewModifier {
         content
             .padding()
             .background(.blue.opacity(0.75))
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
             .font(.title)
             .clipShape(Circle())
             .padding(.trailing)
