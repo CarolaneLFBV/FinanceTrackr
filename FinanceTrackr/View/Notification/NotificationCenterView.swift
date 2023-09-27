@@ -75,8 +75,8 @@ struct NotificationCenterView: View {
         .overlay(infoOverlayView)
         .navigationTitle("Notifications")
         .onAppear(perform: notificationManager.reloadAuthorizationStatus)
-        .onChange(of: notificationManager.authorizationStatus) { authorizationStatus in
-            switch authorizationStatus {
+        .onChange(of: notificationManager.authorizationStatus) {
+            switch notificationManager.authorizationStatus {
             case .notDetermined:
                 notificationManager.requestAuthorization()
             case .authorized:

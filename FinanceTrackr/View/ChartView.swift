@@ -15,25 +15,20 @@ struct ChartView: View {
         NavigationStack {
             Chart {
                 ForEach(viewModel.transactions) { transaction in
-                    if transaction.typeTransaction == "Income" {
-                        BarMark(x: .value("Category", transaction.transactionCategory), y: .value("Amount", transaction.transactionAmount))
-                            .foregroundStyle(.green)
-                    } else {
-                        BarMark(x: .value("Category", transaction.transactionCategory), y: .value("Amount", transaction.transactionAmount))
-                            .foregroundStyle(.red)
+                    if transaction.typeTransaction == "Expense" {
+                        SectorMark(angle: .value("Amount", transaction.transactionAmount), innerRadius: .ratio(0.618), angularInset: 1.5)
+                            .cornerRadius(5)
+                            .foregroundStyle(by: .value("Category", transaction.transactionCategory))
                     }
                 }
             }
             .padding()
-            .onChange(of: viewModel.transactions.count) { value in
-                print("test")
-            }
         }
     }
 }
 
-struct ChartView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChartView()
-    }
+#Preview {
+   ChartView()
 }
+//SectorMark(angle: .value("Amount", transaction.transactionAmount)
+//      .foregroundStyle(by: .value("Category", transaction.transactionCategory))

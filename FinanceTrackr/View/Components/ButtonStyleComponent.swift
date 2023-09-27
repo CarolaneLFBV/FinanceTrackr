@@ -11,7 +11,7 @@ struct ButtonStyleComponent: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background(.blue.opacity(0.75))
+            .background(.blue)
             .foregroundStyle(.white)
             .font(.title)
             .clipShape(Circle())

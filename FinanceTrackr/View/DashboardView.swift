@@ -16,7 +16,7 @@ struct DashboardView: View {
     @State private var isNewMonth = false
     @State private var isMonthlyBudget = false
     @AppStorage("BudgetDisplayed") private var isMonthlyBudgetDisplayed = false
-
+    
     @State private var totalIncome = 0.0
     @State private var totalExpense = 0.0
     
@@ -33,22 +33,29 @@ struct DashboardView: View {
                 Form {
                     Section {
                         if isMonthlyBudgetDisplayed {
-                            Text("Month's Budget: \(monthlyBudgetCalculated.formatted(.number))")
+                            Text("Budget of the month: \(monthlyBudgetCalculated.formatted(.number))")
                                 .font(.title2)
                                 .bold()
                         }
-                        HStack {
-                            Text("Total Earned:")
+                    }
+                    
+                    HStack {
+                        VStack {
+                            Text("Total Earned")
                             Text("\(totalIncome.formatted(.number))")
                                 .foregroundStyle(.green)
                                 .bold()
                         }
-                        HStack {
-                            Text("Total Spent:")
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Text("Total Spent")
                             Text("\(totalExpense.formatted(.number))")
                                 .foregroundStyle(.red)
                                 .bold()
                         }
+                        
                         
                     }
                     
@@ -59,19 +66,18 @@ struct DashboardView: View {
                                 Button("Save") {
                                     isMonthlyBudget = false
                                 }
-                                .buttonStyle(.bordered)
+                                .buttonStyle(.borderedProminent)
                             }
                         }
                     }
                     
                     if viewModel.transactions.count > 0 {
-                        Section {
+                        Section("Expenses Chart") {
                             ChartView()
                         }
-                        
                     }
-
-                    Section {
+                    
+                    Section("List of transactions") {
                         List {
                             ForEach(viewModel.transactions) { transaction in
                                 NavigationLink(destination: TransactionDetailView(transaction: transaction)) {
@@ -82,6 +88,7 @@ struct DashboardView: View {
                                 viewModel.removeTransaction(at: index)
                             }
                         }
+                        
                     }
                 }
                 VStack {
@@ -111,7 +118,7 @@ struct DashboardView: View {
             }
             .navigationTitle("Dashboard")
         }
-        .onChange(of: viewModel.transactions) { value in
+        .onChange(of: viewModel.transactions) {
             updateDashboard()
         }
         .onAppear {
