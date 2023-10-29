@@ -1,10 +1,14 @@
 # FinanceTrackr
-### Monthly Budget Tracker iOS App
+Monthly Budget Tracker iOS App
+
+---
 
 * Language: Swift, SwiftUI
 * Framework(s): Chart
 * Design Pattern: MVVM-C
 * Data Storage: JSON/DocumentsDirectory, AppStorage
+
+---
 
 ## iOS Application
 FinanceTracker is an iOS application that tracks your monthly budget.
