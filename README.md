@@ -5,7 +5,7 @@ Monthly Budget Tracker iOS App
 
 * Language: Swift, SwiftUI
 * Framework(s): Chart
-* Design Pattern: MVVM-C
+* Design Pattern: MVVM
 * Data Storage: JSON/DocumentsDirectory, AppStorage
 
 ---
